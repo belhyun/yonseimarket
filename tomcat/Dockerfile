@@ -3,7 +3,7 @@ FROM tomcat:latest
 MAINTAINER belhyun@yonsei.ac.kr
 
 ENV REFRESHED_AT 2017-03-20
-ENV GITHUB_REPO https://github.com/garystafford/spring-music/raw/build-artifacts
+ENV GITHUB_REPO https://github.com/belhyun/yonseimarket/raw/build-artifacts
 ENV APP_FILE yonseimarket.war
 
 RUN apt-get update -y && \
