@@ -45,6 +45,9 @@ dependencies {
 	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile group: 'org.springframework', name: 'spring-context-support', version: '3.2.2.RELEASE'
+	compile "com.sun.mail:javax.mail"
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 }
 
 dependencyManagement {
@@ -76,7 +79,6 @@ task zipStatic(type: Zip) {
 }
 
 task warNoStatic(type: War) {
-	// omit the version from the war file name
 	version = ''
 	exclude '**/assets/**'
 	manifest {

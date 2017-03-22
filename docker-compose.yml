@@ -1,25 +1,24 @@
-version: '2'
+proxy:
+  build: nginx/
+  ports:
+   - "7080:7080"
+  links:
+   - app01
+   - app02
+  hostname: "proxy"
 
-services:
-  proxy:
-    build: nginx/
-    ports:
-    - 7080:7080
-    networks:
-    - net
-    depends_on:
-    - app
-    hostname: proxy
-    container_name: proxy
+app01:
+  build: tomcat/
+  expose:
+   - "8080"
+  ports:
+   - "8180:8080"
+  hostname: "app01"
 
-  app:
-    build: tomcat/
-    ports:
-    - 8080
-    networks:
-    - net
-    hostname: app
-
-networks:
-  net:
-    driver: bridge
+app02:
+  build: tomcat/
+  expose:
+   - "8080"
+  ports:
+   - "8280:8080"
+  hostname: "app01"
