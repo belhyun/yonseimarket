@@ -12,7 +12,7 @@ import java.util.Properties;
  * Created by benny on 2017-03-22.
  */
 @Configuration
-public class YonseiMarketMailConfiguration {
+public class YMMailConfiguration {
 
     @Value("${mail.protocol}") // this is to read variable from application.properties
     private String mailProtocol;

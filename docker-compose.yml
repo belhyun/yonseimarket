@@ -22,3 +22,17 @@ app02:
   ports:
    - "8280:8080"
   hostname: "app01"
+
+mongodata:
+  image: mongo:latest
+  volumes:
+    - /data/db
+  command: --break-mongo
+
+mongo:
+  image: mongo:latest
+  volumes_from:
+    - mongodata
+  ports:
+    - "27017:27017"
+  command: --smallfiles --rest --auth
