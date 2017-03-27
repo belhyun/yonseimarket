@@ -24,6 +24,7 @@ public class YMMailConfiguration {
     private String userName;
     @Value("${mail.support.password}")
     private String password;
+
     @Bean
     public JavaMailSender javaMailSender() {
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
