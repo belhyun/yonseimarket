@@ -31,6 +31,4 @@ public class Member {
                 .nickName(nickName).build();
         return member;
     }
-
-
 }
